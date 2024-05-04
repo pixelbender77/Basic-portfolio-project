@@ -337,7 +337,7 @@ header {
     /* background-color: aquamarine; */
     display: flex;
     align-items: center;
-    margin: 10px 80px;
+    margin: 10px 10px;
     /* gap: 10rem; */
 }
 
@@ -436,12 +436,13 @@ header {
 
 #projects .title {
     color: white;
-    align-self: center;
+    align-self: flex-start;
     opacity: 0;
     scale: .5;
     animation: fade-in linear forwards;
     animation-timeline: view();
     animation-range: entry;
+    margin-top: 50px;
 }
 
 @keyframes fade-in {
@@ -450,29 +451,29 @@ header {
         scale: 1;
     }
 }
-
+/*
 #projects .title::before {
     background-color: white;
     left: 30px;
     width: 100px;
-}
+}*/
 
 #projects {
     margin-top: 40px;
-    padding: 15px 20px;
     width: 100%;
+    
     min-height: 400px;
     max-height: auto;
     background-color: black;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /*justify-content: space-around;*/
     gap: 3rem;
 }
 
 .project__tiles {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     /*minmax here defines the minimum and maximum width of a column but also automatically that of the grid items (tiles in this case) */
     gap: 30px;
 }
@@ -483,8 +484,8 @@ header {
 @media only screen and (max-width: 767px) {
     #projects,
     #projects .title {
-        padding-left: 7rem;
-        padding-right: 5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
     #projects .title::before {
         left: 150px;
@@ -500,6 +501,7 @@ header {
     background-color: #76797A;
     max-width: 450px;
     /*This is to catch up with the 1fr on maximum width on grid-template-columns. This is to make sure if there was one tile, it should not take up the whole width*/
+    min-width: 50px;
     display: flex;
     flex-direction: column-reverse;
     /*Tile image*/
@@ -561,7 +563,7 @@ header {
 
 .tile__technologies {
     display: flex;
-    gap: 1rem;
+    gap: minmax(0.2rem, 1rem);
     font-size: 0.7rem;
 }
 
